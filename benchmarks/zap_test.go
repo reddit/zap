@@ -25,10 +25,10 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/reddit/zap"
+	"github.com/reddit/zap/internal/ztest"
+	"github.com/reddit/zap/zapcore"
 	"go.uber.org/multierr"
-	"go.uber.org/zap"
-	"go.uber.org/zap/internal/ztest"
-	"go.uber.org/zap/zapcore"
 )
 
 var (
