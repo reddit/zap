@@ -31,8 +31,8 @@ import (
 	"strings"
 	"testing"
 
-	"go.uber.org/zap"
-	"go.uber.org/zap/zapcore"
+	"github.com/reddit/zap"
+	"github.com/reddit/zap/zapcore"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -43,8 +43,8 @@ import (
 // intended to match on the function name, while this is on the full output
 // which includes filenames.
 var _zapPackages = []string{
-	"go.uber.org/zap.",
-	"go.uber.org/zap/zapcore.",
+	"github.com/reddit/zap.",
+	"github.com/reddit/zap/zapcore.",
 }
 
 func TestStacktraceFiltersZapLog(t *testing.T) {
@@ -104,7 +104,7 @@ func TestStacktraceFiltersVendorZap(t *testing.T) {
 		setupSymlink(t, curFile, filepath.Join(testDir, curFile))
 
 		// Set up symlinks for zap, and for any test dependencies.
-		setupSymlink(t, zapDir, filepath.Join(vendorDir, "go.uber.org/zap"))
+		setupSymlink(t, zapDir, filepath.Join(vendorDir, "github.com/reddit/zap"))
 		for _, dep := range deps {
 			setupSymlink(t, dep.Dir, filepath.Join(vendorDir, dep.ImportPath))
 		}

@@ -24,7 +24,7 @@ import (
 	"runtime"
 	"sync"
 
-	"go.uber.org/zap/internal/bufferpool"
+	"github.com/reddit/zap/internal/bufferpool"
 )
 
 var (
